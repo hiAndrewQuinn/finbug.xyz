@@ -23,57 +23,72 @@
   </head>
   <body>
     <header>
-      <h1>Finbug.xyz</h1>
-      <p>Tools for Finnish language learners by Andrew Quinn</p>
+      <h1>finbug.xyz</h1>
+      <p>Free software tools for Finnish language learners by <a href="https://andrew-quinn.me/">Andrew Quinn</a>.</p>
     </header>
     <main>
       <section id="tsk">
         <h2><a href="https://github.com/hiAndrewQuinn/tsk">tsk (taskusanakirja)</a></h2>
-        <p>A cross-platform pocket dictionary with a delightful CLI interface for instant Finnish-English lookups.</p>
-        <p>Single-executable downloads are available for Mac, Windows, and Linux. Don't let the old timey interface fool you - it will still work.</p>
-        <img src="https://private-user-images.githubusercontent.com/53230903/415674674-eed841b8-1dbe-42dc-953e-429e6ee7104c.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDY0OTQ5OTYsIm5iZiI6MTc0NjQ5NDY5NiwicGF0aCI6Ii81MzIzMDkwMy80MTU2NzQ2NzQtZWVkODQxYjgtMWRiZS00MmRjLTk1M2UtNDI5ZTZlZTcxMDRjLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MDYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTA2VDAxMjQ1NlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTkxMDIxMWMzNGRjNTM3ZTY0ZDJiMWZhMmYzOTMxMDgyZWE3MTJhMjdhZTUyNDFiODNlY2M1MmE0ZmZhYTBkOTImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.lIZobtWpGxnJi--10CV46AOugJB-eva4Di6opcgCqB8" alt="tsk terminal interface screenshot" />
+	<p>A <strong>very fast pocket dictionary</strong> that <strong>searches as you type</strong> for instant Finnish-English lookups. The animated GIF on the Github page will make it click faster than I possibly could in writing.</p>
+        <p>I designed this specifically for the use case of, you're reading a book, and you want to look up the meaning of a new word as fast as possible, oftentimes without even typing in the whole word. Single-executable downloads are available for **Mac, Windows, and Linux**. Don't let the old timey interface fool you - it will still work!</p>
       </section>
       <section id="finstem">
         <h2><a href="https://github.com/hiAndrewQuinn/finstem">finstem</a></h2>
         <p>A tiny command-line program to reverse-lemmatize Finnish words and link to the real Wiktionary entry.</p>
-        <img src="https://private-user-images.githubusercontent.com/53230903/288325999-9d0eef09-6d25-4519-9dab-8773edc555a8.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDY0OTUyMDUsIm5iZiI6MTc0NjQ5NDkwNSwicGF0aCI6Ii81MzIzMDkwMy8yODgzMjU5OTktOWQwZWVmMDktNmQyNS00NTE5LTlkYWItODc3M2VkYzU1NWE4LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MDYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTA2VDAxMjgyNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTE5ZGE1YzQxOGUyNzEzMDEzYjBmNzA0Yzg0ZjU4MTVkNmU1MDQwM2RhMWYxZmRjZjYxYTU4ZGJkMTI5MjczMzUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.o_61jycaNUJEe2trSKCgDap46xXPbvHPZGOzj-DtWoU" alt="finstem demo screenshot" />
+	<p>This one is probably best explained with an example:<p>
+	<pre>
+❯ python finstem.py aiemminkin
+aiemminkin           -> aiemmin         https://en.wiktionary.org/wiki/aiemmin#Finnish
+                     -> aiempi          https://en.wiktionary.org/wiki/aiempi#Finnish
+
+❯ python finstem.py Heti kun täytän sen ikävuoden, että pääsen äänestämään.
+Heti                 -> heti            https://en.wiktionary.org/wiki/heti#Finnish
+kun                  -> kun             https://en.wiktionary.org/wiki/kun#Finnish
+täytän               -> täyttää         https://en.wiktionary.org/wiki/täyttää#Finnish
+sen                  -> se              https://en.wiktionary.org/wiki/se#Finnish
+ikävuoden            -> ikävuosi        https://en.wiktionary.org/wiki/ikävuosi#Finnish
+että                 -> että            https://en.wiktionary.org/wiki/että#Finnish
+pääsen               -> päästä          https://en.wiktionary.org/wiki/päästä#Finnish
+äänestämään          -> äänestämä       https://en.wiktionary.org/wiki/äänestämä#Finnish
+                     -> äänestää        https://en.wiktionary.org/wiki/äänestää#Finnish
+	</pre>
       </section>
       <section id="finfreq10k">
         <h2><a href="https://ankiweb.net/shared/info/1149950470">finfreq10k</a></h2>
         <p>An Anki deck with the 10,000 most common Finnish words, featuring Wiktionary definitions and example sentences.</p>
-        <!-- No official screenshot available; please provide a deck preview image URL here -->
       </section>
       <section id="finfreq">
         <h2><a href="https://ankiweb.net/shared/info/1331009943">finfreq</a></h2>
         <p>The predecessor 1,000-word deck with embedded Wiktionary entries and Tatoeba sentences.</p>
-        <!-- No official screenshot available; please provide a deck preview image URL here -->
       </section>
       <section id="selkouutiset-archive">
-        <h2><a href="https://github.com/hiAndrewQuinn/selkouutiset-archive">Andrew's Selkouutiset Archive</a></h2>
+        <h2><a href="https://hiandrewquinn.github.io/selkouutiset-archive/">Andrew's Selkouutiset Archive</a></h2>
         <p>A chronological archive of YLE's Selkouutiset with English translations for every article.</p>
-        <!-- No screenshot provided in README; refer to site directly for visuals -->
+	<p>I originally started this project after realizing that the YLE.fi website doesn't seem to have any obvious way to get a given article based on its date. Over time it actually grew to be my preferred way to read the news - the HTML is as simple as possible, so the page loads really really fast.</p>
       </section>
       <section id="selkokortti">
         <h2><a href="https://github.com/Selkouutiset-Archive/selkokortti">selkokortti</a></h2>
         <p>A Python script to generate mass dumps of Anki cards from the Selkouutiset Archive.</p>
         <p>If you don't want to run the script yourself, every six months under the "Releases" page I also post a 6-month download dump of the last 8 months of news. These average about 5000 cards in total.</p>
-        <video src="https://private-user-images.githubusercontent.com/53230903/318409136-15485a58-725a-4d79-8a2c-59da04c65448.webm?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDY0OTUyNTUsIm5iZiI6MTc0NjQ5NDk1NSwicGF0aCI6Ii81MzIzMDkwMy8zMTg0MDkxMzYtMTU0ODVhNTgtNzI1YS00ZDc5LThhMmMtNTlkYTA0YzY1NDQ4LndlYm0_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwNTA2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDUwNlQwMTI5MTVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jMmIyZGZhY2EwZjJhZDdjNzI2NDk3YmZlMjIzMzY3OTYxZGYzNzM0NTAyZmZhODg1NDM4ZWY3YmE4ODYyNGQ0JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.vcrGPsKudGfnyiqv86F4LFhN2mxlEF6forp-832fhJY" controls muted loop></video>
+	<p>If you're new enough to the Finnish language that even Selkouutiset is still a little much for you, you might get a lot of value out of this.</p>
       </section>
       <section id="audio2anki">
         <h2><a href="https://github.com/hiAndrewQuinn/audio2anki">audio2anki</a></h2>
         <p>Transcribe videos with Whisper and create Anki flashcards with audio on the front and transcript on the back.</p>
-        <p>(This isn't actually Finnish specific, but I built it to help with learning Finnish, so I'm including it here.)</p>
-        <img src="https://private-user-images.githubusercontent.com/53230903/416092269-e7667553-a3d5-4734-83fa-875410bd7f91.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDY0OTU0MTYsIm5iZiI6MTc0NjQ5NTExNiwicGF0aCI6Ii81MzIzMDkwMy80MTYwOTIyNjktZTc2Njc1NTMtYTNkNS00NzM0LTgzZmEtODc1NDEwYmQ3ZjkxLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MDYlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTA2VDAxMzE1NlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTU1M2I5ZDNhZTI5NzUwZmM1MTI5NmU5Y2IxYmUxYThmNWM0NzZiOWE4YjhjNmQ2ZTE4Yzg3MDg3Y2MyZjRiYmImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.EYKywpu_4v_GoPwhK3q78LlMLNoPeeILZws7I7UG774" alt="finstem demo screenshot" />
+        <p>This isn't actually Finnish specific, but I built it to help with learning Finnish, so I'm including it here.</p>
         <!-- No official screenshot available; please provide one if desired -->
       </section>
       <section id="other-projects">
         <h2>Other Projects</h2>
         <p>Explore more tools and experiments on <a href="https://github.com/hiAndrewQuinn">my GitHub profile</a>.</p>
       </section>
-    </main>
+      <section id="support">
+        <h2>How to support me</h2>
+        <p>Just be yourself. I can carry myself through any storm, knowing you're still out there somewhere, learning Finnish.</p>
+      </section>
+    </main>)
     <footer>
       <p>&copy; 2025 Andrew Quinn</p>
     </footer>
   </body>
 </html>
-
