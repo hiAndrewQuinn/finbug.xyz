@@ -2,22 +2,183 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Finbug.xyz - Tools for Finnish Learners</title>
     <style>
-    /* Mobile-friendly, minimalist CSS */
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; }
-    header, footer { background-color: #f4f4f4; text-align: center; padding: 1em 0; }
-    header h1 { margin: 0.5em 0; }
-    main { padding: 1em; max-width: 800px; margin: auto; }
-    section { margin-bottom: 2em; }
-    section h2 { margin-bottom: 0.5em; color: #0066cc; }
-    section p { margin: 0.5em 0; }
-    section a { color: #0066cc; text-decoration: none; }
-    section a:hover { text-decoration: underline; }
-    img { max-width: 100%; height: auto; display: block; margin: 0.5em 0; border: 1px solid #ddd; border-radius: 4px; }
-    @media (min-width: 600px) {
-      main { display: grid; grid-template-columns: 1fr; grid-gap: 2em; }
+    /* Base CSS for my Hugo website. */
+
+    /* CSS HEX */
+    :root { 
+      --copper: #a8763eff;
+      --cosmic-latte: #f7f3e3ff;
+      --antiflash-white: #ecf0f1ff;
+      --specsavers-green: #0a6640ff;
+      --barn-red: #6f1a07ff;
+      --bistre: #2b2118ff;
+
+      /* Base sizes for mobile */
+      --base-font-size: 18px;
+      --h1-font-size: 2em;
+      --h2-font-size: 1.5em;
+      --h3-font-size: 1.2em;
+      --code-font-size: 0.9em;
+      --body-margin: 0 5%;
+      --body-padding: 0 15px;
+      --max-width: 100%;
+    }
+
+    html {
+      background-color: var(--cosmic-latte);
+      color: var(--bistre);
+      font-family: 'Lexend Deca', serif;
+      margin: 1em 0;
+      font-size: var(--base-font-size);
+    }
+
+    body {
+      margin: var(--body-margin);
+      max-width: var(--max-width);
+      padding: var(--body-padding);
+    }
+
+    h1, h2, h3 {
+      font-family: "Atkinson Hyperlegible";
+      line-height: 1.2;
+    }
+
+    h1 {
+      color: var(--barn-red);
+      font-size: var(--h1-font-size);
+      font-weight: 700;
+      margin: 0.5em 0 0.5em;
+    }
+
+    h2 {
+      color: var(--copper);
+      font-size: var(--h2-font-size);
+      font-weight: 700;
+      margin: 0.8em 0 0.4em;
+    }
+
+    h3 {
+      font-size: var(--h3-font-size);
+      margin: 0.6em 0 0.3em;
+    }
+
+    p, ul, ol {
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--copper);
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+
+    a:hover, a:focus {
+      background-color: yellow;
+    }
+
+    code, pre {
+      margin: 1em 0;
+      font-family: 'Fira Code', monospace;
+      background-color: var(--antiflash-white);
+      color: var(--specsavers-green);
+      font-size: var(--code-font-size);
+      overflow-x: auto;
+    }
+
+    code.code-inline {
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    #post {
+      margin: 1.5em 0;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 0.5em;
+      border: 0.1em solid var(--bistre);
+    }
+
+    blockquote {
+      font-style: italic;
+      border-left: 0.25em solid var(--copper);
+      border-bottom: 0.125em solid var(--copper);
+      margin: 1em 0;
+      padding: 0.5em 1em;
+      font-size: 95%;
+    }
+
+    div[style*="color:#272822;"] {
+      margin-top: 1.5em;
+      margin-bottom: 1.5em;
+      overflow-x: auto;
+    }
+
+    /* Media query for larger screens */
+    @media screen and (min-width: 768px) {
+      :root {
+        --base-font-size: 18px;
+        --h1-font-size: 2.0em;
+        --h2-font-size: 1.5em;
+        --h3-font-size: 1.2em;
+        --code-font-size: 1em;
+        --body-margin: 0 auto;
+        --body-padding: 0 30px;
+        --max-width: 1200px;
+      }
+
+      h1 {
+        margin: 0.5em 0 0.6em;
+      }
+      h2 {
+        margin: 1em 0 0.5em;
+      }
+
+      h3 {
+        margin: 0.8em 0 0.4em;
+      }
+    }
+
+    table {
+      margin: 1em;
+      min-width: 80%;
+      max-width: 100%;
+    }
+
+    thead {
+      color: var(--barn-red);
+      font-size: 0.95em;
+    }
+
+    tbody {
+      font-size: 0.9em;
+    }
+
+
+    tbody tr:hover {
+      background-color: yellow;
+    }
+
+    tbody td:hover {
+      color: var(--specsavers-green);
     }
     </style>
   </head>
@@ -29,29 +190,29 @@
     <main>
       <section id="tsk">
         <h2><a href="https://github.com/hiAndrewQuinn/tsk">tsk (taskusanakirja)</a></h2>
-	<p>A <strong>very fast pocket dictionary</strong> that <strong>searches as you type</strong> for instant Finnish-English lookups. The animated GIF on the Github page will make it click faster than I possibly could in writing.</p>
+        <p>A <strong>very fast pocket dictionary</strong> that <strong>searches as you type</strong> for instant Finnish-English lookups. The animated GIF on the Github page will make it click faster than I possibly could in writing.</p>
         <p>I designed this specifically for the use case of, you're reading a book, and you want to look up the meaning of a new word as fast as possible, oftentimes without even typing in the whole word. Single-executable downloads are available for **Mac, Windows, and Linux**. Don't let the old timey interface fool you - it will still work!</p>
       </section>
       <section id="finstem">
         <h2><a href="https://github.com/hiAndrewQuinn/finstem">finstem</a></h2>
         <p>A tiny command-line program to reverse-lemmatize Finnish words and link to the real Wiktionary entry.</p>
-	<p>This one is probably best explained with an example:<p>
-	<pre>
+        <p>This one is probably best explained with an example:<p>
+        <pre>
 ❯ python finstem.py aiemminkin
-aiemminkin           -> aiemmin         https://en.wiktionary.org/wiki/aiemmin#Finnish
-                     -> aiempi          https://en.wiktionary.org/wiki/aiempi#Finnish
+aiemminkin           -&gt; aiemmin         https://en.wiktionary.org/wiki/aiemmin#Finnish
+-&gt; aiempi          https://en.wiktionary.org/wiki/aiempi#Finnish
 
-❯ python finstem.py Heti kun täytän sen ikävuoden, että pääsen äänestämään.
-Heti                 -> heti            https://en.wiktionary.org/wiki/heti#Finnish
-kun                  -> kun             https://en.wiktionary.org/wiki/kun#Finnish
-täytän               -> täyttää         https://en.wiktionary.org/wiki/täyttää#Finnish
-sen                  -> se              https://en.wiktionary.org/wiki/se#Finnish
-ikävuoden            -> ikävuosi        https://en.wiktionary.org/wiki/ikävuosi#Finnish
-että                 -> että            https://en.wiktionary.org/wiki/että#Finnish
-pääsen               -> päästä          https://en.wiktionary.org/wiki/päästä#Finnish
-äänestämään          -> äänestämä       https://en.wiktionary.org/wiki/äänestämä#Finnish
-                     -> äänestää        https://en.wiktionary.org/wiki/äänestää#Finnish
-	</pre>
+❯ python finstem.py Heti kun t&auml;yt&auml;n sen ik&auml;vuoden, ett&auml; p&auml;&auml;sen &auml;&auml;nest&auml;m&auml;&auml;n.
+Heti                 -&gt; heti            https://en.wiktionary.org/wiki/heti#Finnish
+kun                  -&gt; kun             https://en.wiktionary.org/wiki/kun#Finnish
+t&auml;yt&auml;n               -&gt; t&auml;ytt&auml;&auml;         https://en.wiktionary.org/wiki/t&auml;ytt&auml;&auml;#Finnish
+sen                  -&gt; se              https://en.wiktionary.org/wiki/se#Finnish
+ik&auml;vuoden            -&gt; ik&auml;vuosi        https://en.wiktionary.org/wiki/ik&auml;vuosi#Finnish
+ett&auml;                 -&gt; ett&auml;            https://en.wiktionary.org/wiki/ett&auml;#Finnish
+p&auml;&auml;sen               -&gt; p&auml;&auml;st&auml;          https://en.wiktionary.org/wiki/p&auml;&auml;st&auml;#Finnish
+&auml;&auml;nest&auml;m&auml;&auml;n          -&gt; &auml;&auml;nest&auml;m&auml;       https://en.wiktionary.org/wiki/&auml;&auml;nest&auml;m&auml;#Finnish
+-&gt; &auml;&auml;nest&auml;&auml;        https://en.wiktionary.org/wiki/&auml;&auml;nest&auml;&auml;#Finnish
+        </pre>
       </section>
       <section id="finfreq10k">
         <h2><a href="https://ankiweb.net/shared/info/1149950470">finfreq10k</a></h2>
@@ -64,13 +225,13 @@ pääsen               -> päästä          https://en.wiktionary.org/wiki/pä�
       <section id="selkouutiset-archive">
         <h2><a href="https://hiandrewquinn.github.io/selkouutiset-archive/">Andrew's Selkouutiset Archive</a></h2>
         <p>A chronological archive of YLE's Selkouutiset with English translations for every article.</p>
-	<p>I originally started this project after realizing that the YLE.fi website doesn't seem to have any obvious way to get a given article based on its date. Over time it actually grew to be my preferred way to read the news - the HTML is as simple as possible, so the page loads really really fast.</p>
+        <p>I originally started this project after realizing that the YLE.fi website doesn't seem to have any obvious way to get a given article based on its date. Over time it actually grew to be my preferred way to read the news - the HTML is as simple as possible, so the page loads really really fast.</p>
       </section>
       <section id="selkokortti">
         <h2><a href="https://github.com/Selkouutiset-Archive/selkokortti">selkokortti</a></h2>
         <p>A Python script to generate mass dumps of Anki cards from the Selkouutiset Archive.</p>
         <p>If you don't want to run the script yourself, every six months under the "Releases" page I also post a 6-month download dump of the last 8 months of news. These average about 5000 cards in total.</p>
-	<p>If you're new enough to the Finnish language that even Selkouutiset is still a little much for you, you might get a lot of value out of this.</p>
+        <p>If you're new enough to the Finnish language that even Selkouutiset is still a little much for you, you might get a lot of value out of this.</p>
       </section>
       <section id="audio2anki">
         <h2><a href="https://github.com/hiAndrewQuinn/audio2anki">audio2anki</a></h2>
@@ -79,11 +240,11 @@ pääsen               -> päästä          https://en.wiktionary.org/wiki/pä�
         <!-- No official screenshot available; please provide one if desired -->
       </section>
       <section id="finnish-vocabulary-masker">
-        <h2><a href="https://hiandrewquinn.github.io/finnish-vocabulary-masker/">Andrew's Finnish Vocabulary Masker</a></h2>
-        <p>A simple JavaScript-based vocabulary masker, to help you see the "shapes" of Finnish words on e.g. your vocabulary flashcards without actually giving away the word itself. <strong>No download needed</strong>, just visit the page!</p>
-        <p>The punctuation mask I have actually already used on finfreq10k and finfreq; I just decided to pull out the JavaScript logic to put it on its own easy-to-access page.</p>
-        <!-- No official screenshot available; please provide one if desired -->
-      </section>
+      <h2><a href="https://hiandrewquinn.github.io/finnish-vocabulary-masker/">Andrew's Finnish Vocabulary Masker</a></h2>
+      <p>A simple JavaScript-based vocabulary masker, to help you see the "shapes" of Finnish words on e.g. your vocabulary flashcards without actually giving away the word itself. <strong>No download needed</strong>, just visit the page!</p>
+      <p>The punctuation mask I have actually already used on finfreq10k and finfreq; I just decided to pull out the JavaScript logic to put it on its own easy-to-access page.</p>
+      <!-- No official screenshot available; please provide one if desired -->
+    </section>
       <section id="finyap">
         <h2><a href="https://github.com/hiAndrewQuinn/finyap">finyap - learn Finnish by writing Finnish, with guardrails</a></h2>
         <p>This is my latest 'big' project here. Still in early alpha, but it builds off of my earlier projects like <a href="https://hiandrewquinn.github.io/finnish-vocabulary-masker/">Andrew's Finnish Vocabulary Masker</a> to help people practice actively writing entire grammatically-correct sentences in Finnish pulled from Tatoeba.</p>
@@ -97,7 +258,7 @@ pääsen               -> päästä          https://en.wiktionary.org/wiki/pä�
         <h2>How to support me</h2>
         <p>Just be yourself. I can carry myself through any storm, knowing you're still out there somewhere, learning Finnish.</p>
       </section>
-    </main>)
+    </main>
     <footer>
       <p>&copy; 2025 Andrew Quinn</p>
     </footer>
