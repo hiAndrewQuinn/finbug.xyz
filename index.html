@@ -260,10 +260,40 @@
         padding: 0.4em 0.5em;
       }
     }
+    
+    /* New banner styling */
+    .relocation-banner {
+      background-color: var(--barn-red);
+      color: var(--cosmic-latte);
+      text-align: center;
+      padding: 0.75em 1em;
+      margin: 0;
+      width: 100%;
+      box-sizing: border-box; /* Include padding in width calculation */
+      font-weight: bold;
+      font-family: 'Atkinson Hyperlegible', sans-serif;
+      font-size: 1.1em;
+    }
+
+    .relocation-banner a {
+      color: var(--cosmic-latte);
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+
+    .relocation-banner a:hover, .relocation-banner a:focus {
+      background-color: rgba(255, 255, 255, 0.2); /* Slightly lighter background on hover */
+      color: var(--cosmic-latte);
+    }
+
     </style>
 
   </head>
   <body>
+    <div class="relocation-banner">
+      This page will be moved to <a href="https://finnish.andrew-quinn.me">https://finnish.andrew-quinn.me</a> sometime in the next year.
+    </div>
+
     <header>
       <h1>🇫🇮 finbug.xyz 🇫🇮 - my Finnish language learning software</h1>
       <p>Free software tools for Finnish language learners by <a href="https://andrew-quinn.me/">Andrew Quinn</a>.</p>
