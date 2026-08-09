@@ -268,37 +268,27 @@
       }
     }
     
-    /* New banner styling */
-    .relocation-banner {
-      background-color: var(--barn-red);
-      color: var(--cosmic-latte);
-      text-align: center;
-      padding: 0.75em 1em;
-      margin: 0;
-      width: 100%;
-      font-weight: bold;
-      font-family: 'Atkinson Hyperlegible', sans-serif;
-      font-size: 1.1em;
-    }
-
-    .relocation-banner a {
-      color: var(--cosmic-latte);
-      text-decoration: underline;
-      text-decoration-style: dotted;
-    }
-
-    .relocation-banner a:hover, .relocation-banner a:focus {
-      background-color: rgba(255, 255, 255, 0.2); /* Slightly lighter background on hover */
-      color: var(--cosmic-latte);
+    /* Present in the DOM for crawlers/archives, invisible to sighted
+       visitors — standard clip-based visually-hidden pattern. */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     </style>
 
   </head>
   <body>
-    <div class="relocation-banner">
-      finbug.xyz has moved to <a href="https://finnish.andrew-quinn.me">https://finnish.andrew-quinn.me</a>. The old domain name will be retired on 2026-06.
-    </div>
+    <p class="visually-hidden">
+      This page, finbug.xyz, has moved to https://finnish.andrew-quinn.me. The finbug.xyz domain name was scheduled to be retired in June 2026.
+    </p>
 
     <header>
       <h1>🇫🇮 finnish.andrew-quinn.me 🇫🇮 - my Finnish language learning software</h1>
