@@ -64,6 +64,12 @@
       font-size: var(--base-font-size);
     }
 
+    @media (prefers-reduced-motion: no-preference) {
+      html {
+        scroll-behavior: smooth;
+      }
+    }
+
     body {
       margin: var(--body-margin);
       max-width: var(--max-width);
@@ -268,6 +274,32 @@
       }
     }
     
+    /* --- Table of Contents --- */
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5em;
+      padding: 0;
+      margin: 0.75em 0 0;
+    }
+
+    /* Override the sitewide li+li rule: with flex-wrap, top margin on
+       mid-row items would misalign them against the first pill in the
+       row; the flex gap already spaces wrapped rows correctly. */
+    .toc-list li + li {
+      margin-top: 0;
+    }
+
+    .toc-list a {
+      display: inline-block;
+      padding: 0.3em 0.7em;
+      border: 1px dotted var(--copper);
+      border-radius: 0.4em;
+      text-decoration: none;
+      font-size: 0.85em;
+    }
+
     /* Present in the DOM for crawlers/archives, invisible to sighted
        visitors — standard clip-based visually-hidden pattern. */
     .visually-hidden {
@@ -294,6 +326,20 @@
       <h1>🇫🇮 finnish.andrew-quinn.me 🇫🇮 - my Finnish language learning software</h1>
       <p>Free software tools for Finnish language learners by <a href="https://andrew-quinn.me/">Andrew Quinn</a>.</p>
       <p>A "🕸️" means the project is <strong>live on the web right now</strong>, and you can go visit it! Otherwise it's something you have to download, etc.</p>
+      <nav aria-label="On this page">
+        <ul class="toc-list">
+          <li><a href="#selkouutiset-archive">🕸️ Selkouutiset Archive</a></li>
+          <li><a href="#finnish-vocabulary-masker">🕸️ Vocabulary Masker</a></li>
+          <li><a href="#tsk">tsk</a></li>
+          <li><a href="#finstem">finstem</a></li>
+          <li><a href="#finfreq-decks">Finfreq decks</a></li>
+          <li><a href="#selkokortti">selkokortti</a></li>
+          <li><a href="#audio2anki">audio2anki</a></li>
+          <li><a href="#finyap">finyap</a></li>
+          <li><a href="#other-projects">Other Projects</a></li>
+          <li><a href="#support">Support</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
       <section id="selkouutiset-archive">
