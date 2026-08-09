@@ -5,15 +5,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@700&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;700&family=Atkinson+Hyperlegible:wght@700&family=Fira+Code&display=swap" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>🇫🇮 finnish.andrew-quinn.me 🇫🇮 - my Finnish language learning software</title>
@@ -24,15 +16,20 @@
     * merging a minimal layout with a more advanced base theme.
     */
 
+    /* --- Box Model Reset --- */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
     /* --- Root Variables & Color Palette --- */
     :root {
       /* Color Palette */
-      --copper: #a8763eff;
-      --cosmic-latte: #f7f3e3ff;
-      --antiflash-white: #ecf0f1ff;
-      --specsavers-green: #0a6640ff;
-      --barn-red: #6f1a07ff;
-      --bistre: #2b2118ff;
+      --copper: #a8763e;
+      --cosmic-latte: #f7f3e3;
+      --antiflash-white: #ecf0f1;
+      --specsavers-green: #0a6640;
+      --barn-red: #6f1a07;
+      --bistre: #2b2118;
 
       /* Base sizes for mobile */
       --base-font-size: 18px;
@@ -48,7 +45,7 @@
     /* --- Media query for larger screens --- */
     @media screen and (min-width: 768px) {
       :root {
-        --base-font-size: 18px;
+        /* base-font-size stays 18px from the default above */
         --h1-font-size: 2.2em;
         --h2-font-size: 1.6em;
         --h3-font-size: 1.3em;
@@ -89,6 +86,14 @@
       border-top: 1px solid var(--bistre);
     }
 
+    /* Quiet divider between sections so the page doesn't run together
+       as more projects get added */
+    main > section + section {
+      margin-top: 1.75em;
+      padding-top: 1.5em;
+      border-top: 1px dotted var(--antiflash-white);
+    }
+
     /* --- Typography --- */
     h1, h2, h3 {
       font-family: "Atkinson Hyperlegible", sans-serif;
@@ -117,6 +122,10 @@
 
     p, ul, ol, li {
       line-height: 1.6;
+    }
+
+    li + li {
+      margin-top: 0.3em;
     }
 
     a {
@@ -211,16 +220,14 @@
         --h1-font-size: 1.5em;
         --h2-font-size: 1.25em;
         --h3-font-size: 1.125em;
-        hyphens: auto;
-
-        /* Fallbacks for older browsers if needed */
-        -webkit-hyphens: auto; /* Safari */
-        -ms-hyphens: auto;     /* Internet Explorer */
       }
 
-      /* Reduce overall page margin */
+      /* Reduce overall page margin, and hyphenate to fit more text */
       html {
         margin: 0.25em 0;
+        -webkit-hyphens: auto; /* Safari */
+        -ms-hyphens: auto;     /* Internet Explorer */
+        hyphens: auto;
       }
 
       /* Reduce margins on headers and footers */
@@ -269,7 +276,6 @@
       padding: 0.75em 1em;
       margin: 0;
       width: 100%;
-      box-sizing: border-box; /* Include padding in width calculation */
       font-weight: bold;
       font-family: 'Atkinson Hyperlegible', sans-serif;
       font-size: 1.1em;
@@ -319,7 +325,7 @@
       <section id="finstem">
         <h2><a href="https://github.com/hiAndrewQuinn/finstem"><code>finstem</code> - reverse-conjugate/decline Finnish words</a></h2>
         <p>A tiny command-line program to reverse-lemmatize Finnish words and link to the real Wiktionary entry.</p>
-        <p>This one is probably best explained with an example:<p>
+        <p>This one is probably best explained with an example:</p>
         <pre>
 ❯ python finstem.py aiemminkin
 aiemminkin           -&gt; aiemmin         https://en.wiktionary.org/wiki/aiemmin#Finnish
